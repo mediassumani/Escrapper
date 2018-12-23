@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 """ A web scrapper class that encapsulates neccessary methods and scripts to scrap a website
     Author - Medi W. Assumani
-    
+
 Methods:
     - download_data - Downloads the data from the given URL
     - clean_up_data - Cleans up a web page
