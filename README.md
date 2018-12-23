@@ -17,7 +17,13 @@ pip install Escrapper
 
 ## How is it used?
 
-- --- hi
+  - import the Escrapper module
+    - ```python
+      import Escrapper
+    ```
+  - Create an object of the Escrapper class
+
+
 
 ## Contributing
 
