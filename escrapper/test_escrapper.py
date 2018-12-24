@@ -9,7 +9,7 @@ class TestEscrapper(unittest.TestCase):
         assert scrapper._clean_data is None
         assert scrapper.url is not None
 
-    def download_data(self):
+    def download_data(self): 
         scrapper = Escrapper("https://www.simplyscripts.com/scripts/familyguy2.html")
         raw_data = scrapper.download_data()
         assert scrapper.status_code == 200

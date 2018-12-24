@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 Install this package with pip:
 
 ```python
-pip install Escrapper
+pip install -i https://test.pypi.org/simple/ Escrapper
 
 ```
 
