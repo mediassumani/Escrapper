@@ -21,6 +21,7 @@ class Escrapper(object):
         self._raw_data = None
         self._clean_data = None
         self.status_code = None
+        self.is_data_written_in_file = False
 
 
     def download_data(self):
@@ -29,21 +30,26 @@ class Escrapper(object):
         """
         request = requests.get(self.url)
         self.status_code = request.status_code
-        self.raw_data = request.text
+        self._raw_data = request.text
 
-        return self.raw_data
+        return self._raw_data
 
     def clean_up_data(self):
         """ Cleans up a web page of HTML tags and unwanted characters
             @param - data: the data that has been scrapped
         """
-        soup = BeautifulSoup(self.raw_data, "html.parser")
-        self.clean_data = soup.find("div", "scrolling-script-container").text.strip()
+        soup = BeautifulSoup(self._raw_data, "html.parser")
+        self._clean_data = soup.text
 
-        return self.clean_data
+        return self._clean_data
 
     def write_in_file(self, file_name):
         """ Writes the cleaned up data into an internal text file"""
 
-        with open(file_name, 'w') as file:
-            file.write(clean_data)
+        try:
+            with open(file_name, 'w') as file:
+                file.write(self._clean_data)
+
+            self.is_data_written_in_file = True
+        except IOError:
+            raise("Error Found: Unable to open the text file.")
