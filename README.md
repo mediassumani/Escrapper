@@ -20,10 +20,25 @@ pip install Escrapper
   - import the Escrapper module
     - ```python
       import Escrapper
-    ```
+      ```
   - Create an object of the Escrapper class
+    - ```python
+      scrapper = Escrapper(past_website_url_here)
+      ```
 
+  - Get raw/uncleaned data
+    - ```python
+      raw_data = scrapper.raw_data
+      ```
+  - Get cleaned up data
+    - ```python
+      clean_data = scrapper.clean_data
+      ```
 
+  - Write data's content into a textfile
+  - ```python
+      scrapper.write_in_file("filename.txt")
+    ```
 
 ## Contributing
 

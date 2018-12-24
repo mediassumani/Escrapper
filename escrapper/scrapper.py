@@ -18,30 +18,31 @@ class Scrapper(object):
     def __init__(self, url):
         """ The initializer that only takes in the website's url"""
         self.url = url
-        self.data = None
+        self.raw_data = None
+        self.clean_data = None
+        self._download_data(url)
+        self.clean_up_data()
 
 
-    def _download_data(url):
+    def _download_data(self, url):
         """ Downloads the data from the given URL
             @param - url: the url of the website to be scrapped
         """
         request = requests.get(url)
         status_code = request.status_code
-        data = request.text
+        self.raw_data = request.text
 
-        return data
+        return self.raw_data
 
-    def clean_up_data(data):
+    def _clean_up_data(self):
         """ Cleans up a web page of HTML tags and unwanted characters
             @param - data: the data that has been scrapped
         """
-        soup = BeautifulSoup(data, "html.parser")
-        cleaned_up_data = soup.find("div", "scrolling-script-container").text.strip()
+        soup = BeautifulSoup(self.raw_data, "html.parser")
+        self.clean_data = soup.find("div", "scrolling-script-container").text.strip()
 
-        return cleaned_up_data
-
-    def write_in_file(data, file_name):
+    def write_in_file(self, file_name):
         """ Writes the cleaned up data into an internal text file"""
 
         with open(file_name, 'w') as file:
-            file.write(data)
+            file.write(clean_data)
