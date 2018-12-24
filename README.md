@@ -28,11 +28,11 @@ pip install Escrapper
 
   - Get raw/uncleaned data
     - ```python
-      raw_data = scrapper.raw_data
+      raw_data = scrapper.download_data()
       ```
   - Get cleaned up data
     - ```python
-      clean_data = scrapper.clean_data
+      clean_data = scrapper.clean_up_data()
       ```
 
   - Write data's content into a textfile
