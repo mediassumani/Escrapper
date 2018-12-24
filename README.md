@@ -35,12 +35,14 @@ pip install Escrapper
       clean_data = scrapper.clean_up_data()
       ```
 
-  - Write data's content into a textfile
+  - Write data's content into a text file
   - ```python
       scrapper.write_in_file("filename.txt")
     ```
 
 ## Contributing
+
+Escrapper is open sourced. If there's a feature you'd like to add, you can contribute by making a pull request.
 
 
 ## License
