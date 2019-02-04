@@ -25,7 +25,7 @@ class Escrapper(object):
 
 
     def download_data(self):
-        """ Downloads the data from the given URL
+        """ Download the data from the given URL
             @param - url: the url of the website to be scrapped
         """
         request = requests.get(self.url)
@@ -35,7 +35,7 @@ class Escrapper(object):
         return self._raw_data
 
     def clean_up_data(self):
-        """ Cleans up a web page of HTML tags and unwanted characters
+        """ Clean up a web page of HTML tags and unwanted characters
             @param - data: the data that has been scrapped
         """
         soup = BeautifulSoup(self._raw_data, "html.parser")
@@ -44,7 +44,7 @@ class Escrapper(object):
         return self._clean_data
 
     def write_in_file(self, file_name):
-        """ Writes the cleaned up data into an internal text file"""
+        """ Write the cleaned up data into an internal text file"""
 
         try:
             with open(file_name, 'w') as file:
