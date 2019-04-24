@@ -1,5 +1,5 @@
 # Escrapper
-A lightweight, simple, and easy-to-use web scrapper package tool built in Python.
+A lightweight, simple, and easy-to-use web scrapper package tool built in Python. Escrapper will be soon migrated to PyPI from TestPypi.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -44,4 +44,4 @@ Escrapper is open sourced. If there's a feature you'd like to add, you can contr
 
 
 ## License
-This project is open sourced and under the <a href="https://github.com/MediBoss/Escrapper/blob/master/LICENSE">MIT</a> license.
+This project is open sourced and under the <a href="https://github.com/MediBoss/Escrapper/blob/master/LICENSE">Apache 2.0</a> license.
